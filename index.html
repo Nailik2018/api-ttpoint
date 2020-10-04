@@ -8,14 +8,14 @@
   <body>
   <h1>API api-ttpoint.ch</h1>
   <div class="app-desc">Diese Schnittstelle kann weiter verwendet werden. Momentan befindet sich diese API Schnittstelle noch im Aufbau...</div>
-    <div class="app-desc">API Version: 1.0.0</div>
-    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+    <div class="app-desc">API Version: 0.0.1</div>
+<!--    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>-->
   <h2>Verbindung</h2>
     <ol>
       <li>Die Abfrage erfolgt per URL:</li>
     </ol>
 
-  <h3>Table of Contents </h3>
+  <h3>Inhaltsverzeichnis </h3>
   <div class="method-summary"></div>
   <h4><a href="#associations">Verbände</a></h4>
   <ul>
@@ -36,11 +36,13 @@
   <div class="method"><a name="findPetsByStatus"/>
     <div class="method-path">
       <a class="up" href="#__Methods"></a>
-      <pre class="get"><code class="huge"><span class="http-method">get</span> /pet/findByStatus</code></pre></div>
-    <div class="method-summary">Listet alle Verbände(<span class="nickname">findPetsByStatus</span>)</div>
-    <div class="method-notes">Multiple status values can be provided with comma separated strings</div>
+<!--      <pre class="get"><code class="huge"><span class="http-method">get</span> /pet/findByStatus</code></pre></div>-->
+      <pre class="get"><code class="huge"><span class="http-method">get</span>/api/get-all-associations.php</code></pre></div>
+    <div class="method-summary">Listet alle Schweizer Tischtennis Verbände auf (<span class="nickname">get-all-associations.php</span>)</div>
+<!--    <div class="method-notes">Multiple status values can be provided with comma separated strings</div>-->
+    <div class="method-notes">Dieser API Aufruf gibt alle Tischtennis Verbände der Schweiz aus. Es sind keine Parameter per URL möglich. Die Rückgabe erfolgt als JSON Array (siehe Beispiel Daten)
 
-
+      <hr>
 
 
 
@@ -48,26 +50,51 @@
     <div class="field-items">
       <div class="param">status (required)</div>
 
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status values that need to be considered for filter </div>
+<!--      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status values that need to be considered for filter </div>-->
+      <div class="param-desc"><span class="param-type">Query Parameter: </span>Keiner</div>
     </div>  <!-- field-items -->
 
+      <h3 class="field-label">URL:</h3>
+      <div class="return-type">
+        https://www.api-ttpoint.ch/api/get-all-associations.php</div>
+    </div>
 
-    <h3 class="field-label">Return type</h3>
+
+
+    <h3 class="field-label">Rückgabe Typ:</h3>
     <div class="return-type">
-      array[<a href="#Pet">Pet</a>]
+      array[<a href="/api/get-all-associations.php">Verbände</a>]
+    </div>
 
+    <h3 class="field-label">Content-Type:</h3>
+    <div class="return-type">
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+    </div>
+
+    <h3 class="field-label">Responses:</h3>
+    <div class="return-type">
+      <h4 class="field-label">200</h4>
+      successful operation
+
+      <h4 class="field-label">400</h4>
+        Invalid status value
+      <a href="#"></a>
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
   <tags>
   </tags>
-  <status>Finish</status>
+    <h3 class="field-label">Status:</h3>
+  <status>Abgeschlossen</status>
 </Pet></code></pre>
     <h3 class="field-label">Beispiel Daten</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>
-      [
+    <pre class="example">
+      <code>
+[
   {
     "id": "1",
     "association": "AGTT",
@@ -115,22 +142,8 @@
   }
 ]
     </code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    successful operation
-
-    <h4 class="field-label">400</h4>
-    Invalid status value
-    <a href="#"></a>
-  </div> <!-- method -->
+  </div>
+  <!-- method -->
 
   </div>
   </body>
