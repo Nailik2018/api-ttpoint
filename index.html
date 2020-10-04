@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <title>API ttpoint.ch</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+  <h1>API api-ttpoint.ch</h1>
+  <div class="app-desc">Diese Schnittstelle kann weiter verwendet werden. Momentan befindet sich diese API Schnittstelle noch im Aufbau...</div>
+    <div class="app-desc">API Version: 1.0.0</div>
+    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Verbindung</h2>
+    <ol>
+      <li>Die Abfrage erfolgt per URL:</li>
+    </ol>
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#associations">Verbände</a></h4>
+  <ul>
+<!--  <li><a href="#addPet"><code><span class="http-method">post</span> /pet</code></a></li>-->
+<!--  <li><a href="#deletePet"><code><span class="http-method">delete</span> /pet/{petId}</code></a></li>-->
+<!--  <li><a href="#findPetsByStatus"><code><span class="http-method">get</span> /pet/findByStatus</code></a></li>-->
+<!--  <li><a href="#findPetsByTags"><code><span class="http-method">get</span> /pet/findByTags</code></a></li>-->
+<!--  <li><a href="#getPetById"><code><span class="http-method">get</span> /pet/{petId}</code></a></li>-->
+<!--  <li><a href="#updatePet"><code><span class="http-method">put</span> /pet</code></a></li>-->
+<!--  <li><a href="#updatePetWithForm"><code><span class="http-method">post</span> /pet/{petId}</code></a></li>-->
+<!--  <li><a href="#uploadFile"><code><span class="http-method">post</span> /pet/{petId}/uploadImage</code></a></li>-->
+  </ul>
+
+  <h1><a name="associations">Alle Verbände</a></h1>
+
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="findPetsByStatus"/>
+    <div class="method-path">
+      <a class="up" href="#__Methods"></a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /pet/findByStatus</code></pre></div>
+    <div class="method-summary">Listet alle Verbände(<span class="nickname">findPetsByStatus</span>)</div>
+    <div class="method-notes">Multiple status values can be provided with comma separated strings</div>
+
+
+
+
+
+    <h3 class="field-label">Abfrage Parameter keiner</h3>
+    <div class="field-items">
+      <div class="param">status (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status values that need to be considered for filter </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Pet">Pet</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+  <tags>
+  </tags>
+  <status>Finish</status>
+</Pet></code></pre>
+    <h3 class="field-label">Beispiel Daten</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>
+      [
+  {
+    "id": "1",
+    "association": "AGTT",
+    "association_fullname": "Association Genevoise de Tennis de Table"
+  },
+  {
+    "id": "2",
+    "association": "ANJTT",
+    "association_fullname": "Association Neuchâteloise et Jurassienne de Tennis de"
+  },
+  {
+    "id": "3",
+    "association": "ATTT",
+    "association_fullname": "Associazione Ticinese Tennis Tavolo"
+  },
+  {
+    "id": "4",
+    "association": "AVVF",
+    "association_fullname": "Championnat Vaud Valais Fribourg"
+  },
+  {
+    "id": "5",
+    "association": "MTTV",
+    "association_fullname": "Mittelländischer Tischtennisverband"
+  },
+  {
+    "id": "6",
+    "association": "NWTTV",
+    "association_fullname": "Nordwestschweizer Tischtennisverband"
+  },
+  {
+    "id": "7",
+    "association": "OTTV",
+    "association_fullname": "Ostschweizer Tischtennisverband"
+  },
+  {
+    "id": "8",
+    "association": "TTVI",
+    "association_fullname": "Tischtennisverband Innerschweiz"
+  },
+  {
+    "id": "9",
+    "association": "STTV",
+    "association_fullname": "Schweizerischer Tischtennis Verband"
+  }
+]
+    </code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+    <h4 class="field-label">400</h4>
+    Invalid status value
+    <a href="#"></a>
+  </div> <!-- method -->
+
+  </div>
+  </body>
+</html>
