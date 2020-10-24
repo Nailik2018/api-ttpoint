@@ -170,3 +170,8 @@ code {
     display: inline-block;
     text-decoration: none;
 }
+
+.example{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

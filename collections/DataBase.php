@@ -9,7 +9,7 @@ class DataBase{
 
     public function connection(){
 
-        $databaseIni = parse_ini_file("../configurations/database.ini");
+        $databaseIni = parse_ini_file("../../configurations/database.ini");
 
         $dbuser = $databaseIni['dbuser'];
         $db = $databaseIni['db'];
