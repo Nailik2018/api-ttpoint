@@ -29,6 +29,20 @@
 <!--  <li><a href="#uploadFile"><code><span class="http-method">post</span> /pet/{petId}/uploadImage</code></a></li>-->
   </ul>
 
+<!--#####################################################################################################################  -->
+<!--#####################################################################################################################  -->
+<!--#####################################################################################################################  -->
+<!--#                                                                                                                   #  -->
+<!--#                                                                                                                   #  -->
+<!--#                                                                                                                   #  -->
+<!--#                                                    Alle Verbände                                                  #  -->
+<!--#                                                                                                                   #  -->
+<!--#                                                                                                                   #  -->
+<!--#                                                                                                                   #  -->
+<!--#####################################################################################################################  -->
+<!--#####################################################################################################################  -->
+<!--#####################################################################################################################  -->
+
   <h1><a name="associations">Alle Verbände</a></h1>
 
   </div> <!-- method -->
@@ -38,9 +52,9 @@
       <a class="up" href="#__Methods"></a>
 <!--      <pre class="get"><code class="huge"><span class="http-method">get</span> /pet/findByStatus</code></pre></div>-->
       <pre class="get"><code class="huge"><span class="http-method">get</span>/api/get-all-associations.php</code></pre></div>
-    <div class="method-summary">Listet alle regionale Tischtennis Verbände der Schweiz auf (<span class="nickname">get-all-associations.php</span>)</div>
+    <div class="method-summary">Listet alle regionalen Tischtennis Verbände der Schweiz auf (<span class="nickname">get-all-associations.php</span>)</div>
 <!--    <div class="method-notes">Multiple status values can be provided with comma separated strings</div>-->
-    <div class="method-notes">Es werden alle regionale Tischtennis Verbände der Schweiz aufgelistet inklusive des Schweizerischer Tischtennis Verband (STTV). Es sind keine Parameter per URL möglich. Die Rückgabe erfolgt als JSON Array (siehe Beispiel Daten weiter unten)
+    <div class="method-notes">Es werden alle regionalen Tischtennis Verbände der Schweiz aufgelistet inklusive des Schweizerischer Tischtennis Verband (STTV). Es sind keine Parameter per URL möglich. Die Rückgabe erfolgt als JSON Array (siehe Beispiel Daten weiter unten)
 
       <hr>
 
@@ -139,9 +153,826 @@
   }
 ]
     </pre>
+
+    <!--#####################################################################################################################  -->
+    <!--#####################################################################################################################  -->
+    <!--#####################################################################################################################  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                               Club aus einem Verband                                              #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#####################################################################################################################  -->
+    <!--#####################################################################################################################  -->
+    <!--#####################################################################################################################  -->
+
+    <h1><a name="associations">Alle Clubs eines Verbandes</a></h1>
+
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="findPetsByStatus"/>
+    <div class="method-path">
+      <a class="up" href="#__Methods"></a>
+      <!--      <pre class="get"><code class="huge"><span class="http-method">get</span> /pet/findByStatus</code></pre></div>-->
+      <pre class="get"><code class="huge"><span class="http-method">get</span>/api/get-clubs-of-associations.php</code></pre></div>
+    <div class="method-summary">Listet alle Clubs eines Tischtennisverbandes auf (<span class="nickname">get-all-associations.php</span>)</div>
+    <!--    <div class="method-notes">Multiple status values can be provided with comma separated strings</div>-->
+    <div class="method-notes">Es werden alle Clubs des Verbandes aufgelistet inklusive des Schweizerischer Tischtennis Verband (STTV). Es wird der Namen des Clubs, welchem Verband dieser Club angehört, der höchste Elo Wert eines Spielers und die Anzahl der Lizenzierten Spieler Frauen und Männer zusammen als Datensatz ersichtlich sein. Es ist nur der Verband als Paramter möglich. Die Rückgabe erfolgt als JSON Array (siehe Beispiel Daten weiter unten)
+
+      <hr>
+
+      <h3 class="field-label">Abfrage Parameter</h3>
+      <div class="field-items">
+        <div class="param">status (required)</div>
+
+        <!--      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status values that need to be considered for filter </div>-->
+        <div class="param-desc"><span class="param-type">Query Parameter: </span>AGTT, ANJTT, ATTT, AVVF, MTTV, NWTTV, OTTV, TTVI oder STTV</div>
+      </div>  <!-- field-items -->
+
+      <h3 class="field-label">URL:</h3>
+      <div class="return-type">
+        https://www.api-ttpoint.ch/api/get-clubs-of-associations.php?association=mttv</div>
+    </div>
+
+
+
+    <h3 class="field-label">Rückgabe Typ:</h3>
+    <div class="return-type">
+      array[<a href="/api/get-all-associations.php">Verbände</a>]
+    </div>
+
+    <h3 class="field-label">Content-Type:</h3>
+    <div class="return-type">
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+    </div>
+
+    <h3 class="field-label">Responses:</h3>
+    <div class="return-type">
+      <h4 class="field-label">200</h4>
+      successful operation
+
+      <h4 class="field-label">400</h4>
+      Invalid status value
+      <a href="#"></a>
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <tags>
+    </tags>
+    <h3 class="field-label">Status:</h3>
+    <status>Abgeschlossen</status>
+    <h3 class="field-label">Beispiel Daten</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example">
+[
+  {
+    "id": "42",
+    "clubname": "Aarberg",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1478",
+    "licencedPlayer": "29"
+  },
+  {
+    "id": "75",
+    "clubname": "Belp",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1249",
+    "licencedPlayer": "16"
+  },
+  {
+    "id": "103",
+    "clubname": "Bern",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1148",
+    "licencedPlayer": "52"
+  },
+  {
+    "id": "156",
+    "clubname": "bls Spiez",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1106",
+    "licencedPlayer": "13"
+  },
+  {
+    "id": "102",
+    "clubname": "Brügg",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1142",
+    "licencedPlayer": "13"
+  },
+  {
+    "id": "54",
+    "clubname": "Burgdorf",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1427",
+    "licencedPlayer": "42"
+  },
+  {
+    "id": "189",
+    "clubname": "Düdingen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1044",
+    "licencedPlayer": "11"
+  },
+  {
+    "id": "256",
+    "clubname": "Erlach",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "789",
+    "licencedPlayer": "7"
+  },
+  {
+    "id": "217",
+    "clubname": "Grauholz",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1280",
+    "licencedPlayer": "12"
+  },
+  {
+    "id": "74",
+    "clubname": "Grenchen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1313",
+    "licencedPlayer": "7"
+  },
+  {
+    "id": "241",
+    "clubname": "Grossaffoltern",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "882",
+    "licencedPlayer": "8"
+  },
+  {
+    "id": "3",
+    "clubname": "Heimberg",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1497",
+    "licencedPlayer": "21"
+  },
+  {
+    "id": "77",
+    "clubname": "Herzogenbuchsee",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1311",
+    "licencedPlayer": "15"
+  },
+  {
+    "id": "258",
+    "clubname": "Huttwil",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "765",
+    "licencedPlayer": "8"
+  },
+  {
+    "id": "231",
+    "clubname": "Interlaken",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "904",
+    "licencedPlayer": "4"
+  },
+  {
+    "id": "89",
+    "clubname": "Ittigen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1208",
+    "licencedPlayer": "15"
+  },
+  {
+    "id": "157",
+    "clubname": "Kirchberg",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1149",
+    "licencedPlayer": "16"
+  },
+  {
+    "id": "118",
+    "clubname": "Köniz",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1169",
+    "licencedPlayer": "24"
+  },
+  {
+    "id": "178",
+    "clubname": "Langenthal",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1049",
+    "licencedPlayer": "17"
+  },
+  {
+    "id": "109",
+    "clubname": "Langnau",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1203",
+    "licencedPlayer": "17"
+  },
+  {
+    "id": "71",
+    "clubname": "Lyss",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1104",
+    "licencedPlayer": "34"
+  },
+  {
+    "id": "80",
+    "clubname": "Münchenbuchsee",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1288",
+    "licencedPlayer": "17"
+  },
+  {
+    "id": "49",
+    "clubname": "Münsingen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1443",
+    "licencedPlayer": "29"
+  },
+  {
+    "id": "251",
+    "clubname": "Niederscherli",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "804",
+    "licencedPlayer": "7"
+  },
+  {
+    "id": "216",
+    "clubname": "Oberdiessbach",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "939",
+    "licencedPlayer": "4"
+  },
+  {
+    "id": "1",
+    "clubname": "Ostermundigen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1491",
+    "licencedPlayer": "35"
+  },
+  {
+    "id": "179",
+    "clubname": "Pieterlen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1054",
+    "licencedPlayer": "13"
+  },
+  {
+    "id": "39",
+    "clubname": "Port",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1572",
+    "licencedPlayer": "31"
+  },
+  {
+    "id": "233",
+    "clubname": "Regio Moossee",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "926",
+    "licencedPlayer": "14"
+  },
+  {
+    "id": "120",
+    "clubname": "Royal Bern",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1208",
+    "licencedPlayer": "10"
+  },
+  {
+    "id": "242",
+    "clubname": "SC Informatik Swisscom Wabern",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "866",
+    "licencedPlayer": "6"
+  },
+  {
+    "id": "222",
+    "clubname": "Schmitten",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "928",
+    "licencedPlayer": "8"
+  },
+  {
+    "id": "235",
+    "clubname": "Schwarzenburg",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "860",
+    "licencedPlayer": "4"
+  },
+  {
+    "id": "73",
+    "clubname": "Solothurn",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1314",
+    "licencedPlayer": "31"
+  },
+  {
+    "id": "176",
+    "clubname": "Steffisburg",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1091",
+    "licencedPlayer": "8"
+  },
+  {
+    "id": "244",
+    "clubname": "Stettlen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "863",
+    "licencedPlayer": "12"
+  },
+  {
+    "id": "236",
+    "clubname": "Studen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "905",
+    "licencedPlayer": "4"
+  },
+  {
+    "id": "201",
+    "clubname": "Thörishaus",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1009",
+    "licencedPlayer": "11"
+  },
+  {
+    "id": "37",
+    "clubname": "Thun",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1403",
+    "licencedPlayer": "37"
+  },
+  {
+    "id": "223",
+    "clubname": "Tiefenau",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "933",
+    "licencedPlayer": "11"
+  },
+  {
+    "id": "249",
+    "clubname": "Utzenstorf",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "833",
+    "licencedPlayer": "4"
+  },
+  {
+    "id": "214",
+    "clubname": "Wichtrach",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "963",
+    "licencedPlayer": "12"
+  },
+  {
+    "id": "144",
+    "clubname": "Wohlensee",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1163",
+    "licencedPlayer": "15"
+  },
+  {
+    "id": "149",
+    "clubname": "Worb",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1158",
+    "licencedPlayer": "18"
+  },
+  {
+    "id": "163",
+    "clubname": "Wynigen",
+    "association": "MTTV",
+    "highestEloOfClubPlayer": "1093",
+    "licencedPlayer": "11"
+  }
+]
+    </pre>
+
+    <!--#####################################################################################################################  -->
+    <!--#####################################################################################################################  -->
+    <!--#####################################################################################################################  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                               Spieler aus einem Club                                              #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#                                                                                                                   #  -->
+    <!--#####################################################################################################################  -->
+    <!--#####################################################################################################################  -->
+    <!--#####################################################################################################################  -->
+
+    <h1><a name="associations">Alle Spieler eines Club</a></h1>
+
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="findPetsByStatus"/>
+    <div class="method-path">
+      <a class="up" href="#__Methods"></a>
+      <!--      <pre class="get"><code class="huge"><span class="http-method">get</span> /pet/findByStatus</code></pre></div>-->
+      <pre class="get"><code class="huge"><span class="http-method">get</span>/api/get-club.php</code></pre></div>
+    <div class="method-summary">Listet alle Spieler einse Tischtennisclub auf (<span class="nickname">get-club.php</span>)</div>
+    <!--    <div class="method-notes">Multiple status values can be provided with comma separated strings</div>-->
+    <div class="method-notes">Es werden alle Spieler des Clubs aufgelistet. Es werden Clubinformationen wie der Name des Clubs, zu welchem Verband der Club gehört und die Anzahl Lizenzierten Spieler angezeigt. Zudem werden die Spieler mit dem Vornamen, Nachnamen, das Gechlecht des Spielers und der Elo Wert als Datensatz ersichtlich sein. Es ist der Club als Paramter möglich. Optional kann als Paramter noch der Monat und das Jahr mitgebenen werden, Dies ermöglicht eine Zeitreise zu einem gezielten Moment des Clubs. Die Rückgabe erfolgt als JSON Array (siehe Beispiel Daten weiter unten)
+
+      <hr>
+
+      <h3 class="field-label">Abfrage Parameter</h3>
+      <div class="field-items">
+        <div class="param">status (required)</div>
+
+        <!--      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status values that need to be considered for filter </div>-->
+        <div class="param-desc"><span class="param-type">Query Parameter: </span>Ostermundigen, Bern, Rio-Star Muttenz oder ZZ-Lancy</div>
+      </div>  <!-- field-items -->
+
+      <h3 class="field-label">URL(s):</h3>
+      <div class="return-type">
+        https://www.api-ttpoint.ch/api/get-club.php?clubname=ostermundigen
+      </div>
+      <div class="return-type">
+        <b>oder</b>
+      </div>
+      <div class="return-type">
+        https://api-ttpoint.ch/api/v1/get-club.php?clubname=ostermundigen&month=8&year=2020
+      </div>
+    </div>
+
+
+
+    <h3 class="field-label">Rückgabe Typ:</h3>
+    <div class="return-type">
+      array[<a href="/api/get-club.php">Club</a>]
+    </div>
+
+    <h3 class="field-label">Content-Type:</h3>
+    <div class="return-type">
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+    </div>
+
+    <h3 class="field-label">Responses:</h3>
+    <div class="return-type">
+      <h4 class="field-label">200</h4>
+      successful operation
+
+      <h4 class="field-label">400</h4>
+      Invalid status value
+      <a href="#"></a>
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <tags>
+    </tags>
+    <h3 class="field-label">Status:</h3>
+    <status>Abgeschlossen</status>
+    <h3 class="field-label">Beispiel Daten</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example">
+{
+  "associationID": "5",
+  "association_fullname": "Mittelländischer Tischtennisverband",
+  "clubID": "1",
+  "clubname": "Ostermundigen",
+  "monthID": "10",
+  "month": "Oktober",
+  "year": "2020",
+  "licensedPlayers": 35,
+  "players": [
+    {
+      "firstname": "Simon",
+      "lastname": "Aeschimann",
+      "licenceNr": "500233",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "774",
+      "currentClassment": "D3"
+    },
+    {
+      "firstname": "Hamdi",
+      "lastname": "Arbi",
+      "licenceNr": "513032",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "815",
+      "currentClassment": "D3"
+    },
+    {
+      "firstname": "Franz",
+      "lastname": "Aspäck",
+      "licenceNr": "500517",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "735",
+      "currentClassment": "D2"
+    },
+    {
+      "firstname": "Marc",
+      "lastname": "Aspäck",
+      "licenceNr": "501924",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1023",
+      "currentClassment": "C6"
+    },
+    {
+      "firstname": "Urs",
+      "lastname": "Baumann",
+      "licenceNr": "500235",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "769",
+      "currentClassment": "D2"
+    },
+    {
+      "firstname": "Mathias",
+      "lastname": "Blaser",
+      "licenceNr": "519069",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "651",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Noël Gilles",
+      "lastname": "Blumer",
+      "licenceNr": "514055",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1228",
+      "currentClassment": "B11"
+    },
+    {
+      "firstname": "Uwe",
+      "lastname": "Böhm",
+      "licenceNr": "506038",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1025",
+      "currentClassment": "C6"
+    },
+    {
+      "firstname": "Alfred",
+      "lastname": "Domig",
+      "licenceNr": "520060",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "630",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Kurt",
+      "lastname": "Eggli",
+      "licenceNr": "514742",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "654",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Klaus",
+      "lastname": "Engel",
+      "licenceNr": "500524",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "590",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Jean",
+      "lastname": "Esseiva",
+      "licenceNr": "501340",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "577",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Severin",
+      "lastname": "Gilliéron",
+      "licenceNr": "504381",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1433",
+      "currentClassment": "A16"
+    },
+    {
+      "firstname": "Peter",
+      "lastname": "Glauser",
+      "licenceNr": "506005",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "586",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Philippe",
+      "lastname": "Göllnitz",
+      "licenceNr": "513030",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1320",
+      "currentClassment": "B14"
+    },
+    {
+      "firstname": "Michel",
+      "lastname": "Greter",
+      "licenceNr": "503757",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "989",
+      "currentClassment": "D5"
+    },
+    {
+      "firstname": "Daniel",
+      "lastname": "Hansen",
+      "licenceNr": "519028",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "697",
+      "currentClassment": "D2"
+    },
+    {
+      "firstname": "Sylvain",
+      "lastname": "Huser",
+      "licenceNr": "502122",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1366",
+      "currentClassment": "B15"
+    },
+    {
+      "firstname": "Garbis",
+      "lastname": "Kayaoglu",
+      "licenceNr": "510067",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "828",
+      "currentClassment": "D3"
+    },
+    {
+      "firstname": "Philipp",
+      "lastname": "Künzler",
+      "licenceNr": "503209",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1054",
+      "currentClassment": "C7"
+    },
+    {
+      "firstname": "Christoph",
+      "lastname": "Linder",
+      "licenceNr": "513002",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1010",
+      "currentClassment": "C6"
+    },
+    {
+      "firstname": "Benjamin",
+      "lastname": "Möller",
+      "licenceNr": "508003",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1194",
+      "currentClassment": "C10"
+    },
+    {
+      "firstname": "Krzysztof",
+      "lastname": "Osicki",
+      "licenceNr": "502209",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "815",
+      "currentClassment": "D3"
+    },
+    {
+      "firstname": "Tim",
+      "lastname": "Schär",
+      "licenceNr": "913088",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1147",
+      "currentClassment": "C9"
+    },
+    {
+      "firstname": "Peter",
+      "lastname": "Schläfli",
+      "licenceNr": "500330",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1253",
+      "currentClassment": "B12"
+    },
+    {
+      "firstname": "Michael",
+      "lastname": "Schmid",
+      "licenceNr": "513049",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "647",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Gabriel",
+      "lastname": "Schmid",
+      "licenceNr": "517014",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1148",
+      "currentClassment": "C9"
+    },
+    {
+      "firstname": "Oliver",
+      "lastname": "Schmid",
+      "licenceNr": "517063",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "856",
+      "currentClassment": "D3"
+    },
+    {
+      "firstname": "Stefan",
+      "lastname": "Schüpbach",
+      "licenceNr": "502739",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "986",
+      "currentClassment": "D5"
+    },
+    {
+      "firstname": "Jean Pierre",
+      "lastname": "Stamm",
+      "licenceNr": "501587",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "617",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Niklas",
+      "lastname": "Verma",
+      "licenceNr": "518077",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "580",
+      "currentClassment": "D1"
+    },
+    {
+      "firstname": "Wolfgang",
+      "lastname": "Warncke",
+      "licenceNr": "518042",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1000",
+      "currentClassment": "C6"
+    },
+    {
+      "firstname": "Manuel",
+      "lastname": "Winterberger",
+      "licenceNr": "503564",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1423",
+      "currentClassment": "A16"
+    },
+    {
+      "firstname": "Roland",
+      "lastname": "Wyss",
+      "licenceNr": "500538",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "909",
+      "currentClassment": "D4"
+    },
+    {
+      "firstname": "Roman",
+      "lastname": "Wyss",
+      "licenceNr": "502090",
+      "genderID": "1",
+      "gender": "Herren",
+      "currentElo": "1491",
+      "currentClassment": "A17"
+    }
+  ]
+}
+    </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
   <!-- method -->
-
   </div>
   </body>
 </html>

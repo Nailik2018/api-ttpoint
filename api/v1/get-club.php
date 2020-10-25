@@ -38,6 +38,7 @@ if(htmlspecialchars($_GET['clubname'])){
     }
 
     $clubname = htmlspecialchars($_GET['clubname']);
+//    $clubname = urldecode(htmlspecialchars($_GET['clubname']));
 
     if(htmlspecialchars($_GET['month'])&& htmlspecialchars($_GET['year'])){
         $searchYear = intval(htmlspecialchars($_GET['year']));
@@ -87,7 +88,7 @@ if(htmlspecialchars($_GET['clubname'])){
         $clubJson['monthID'] = $json[0]->monthID;
         $clubJson['month'] = $json[0]->month;
         $clubJson['year'] = $json[0]->year;
-        $clubJson['countedPlayers'] = count($json);
+        $clubJson['licensedPlayers'] = count($json);
 
         $i = 0;
 
